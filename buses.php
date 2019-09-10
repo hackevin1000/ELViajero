@@ -14,9 +14,9 @@ $consultabuscar=mysql_query("SELECT detalle_viaje.cod_detallev,empresa.nombre_em
 FROM horario,detalle_viaje,empresa_bus,empresa,destino,programacion_viaje 
 WHERE horario.id_horario=detalle_viaje.id_horario AND empresa.cod_empresa=empresa_bus.cod_empresa 
 AND empresa_bus.placa=detalle_viaje.placa AND 
-detalle_viaje.cod_destino=destino.cod_destino AND destino.destino=$fecha
+detalle_viaje.cod_destino=destino.cod_destino AND destino.destino='$destino'
 AND detalle_viaje.cod_programacion=programacion_viaje.cod_programacion 
-AND programacion_viaje.fecha=$destino ",$conex);
+AND programacion_viaje.fecha='$fecha' ",$conex);
 $respuesta=mysql_query("SHOW COLUMNS FROM empresa");
 $numerodefilas=mysql_num_rows($respuesta);
 if($numerodefilas>0)
@@ -30,5 +30,4 @@ if($numerodefilas>0)
     }
 }
 print $en_csv;
-echo $numerodefilas;
 ?>
