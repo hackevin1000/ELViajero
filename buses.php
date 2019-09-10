@@ -1,6 +1,6 @@
 <?
 //conexion base de datos
-$db_host="sql10.freesqldatabase.com:3306";
+$db_host="sql10.freesqldatabase.com";
 $db_base="sql10304634";
 $db_usuario="sql10304634";
 $db_comtrasenia="XWd9aJyWvq";
